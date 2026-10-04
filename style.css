@@ -1,0 +1,31 @@
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:#f5f7fb;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select{font:inherit}
+.topbar{padding:18px max(18px,calc((100% - 1000px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #26304a;background:#11182b;position:sticky;top:0;z-index:5}
+h1,h2,p{margin-top:0}.topbar h1{margin:0;font-size:1.45rem}.topbar p{margin:3px 0 0;color:#9da8bf;font-size:.9rem}
+main{width:min(1000px,92%);margin:24px auto 50px}
+.primary{border:0;border-radius:11px;padding:11px 16px;background:#4f7cff;color:white;font-weight:700;cursor:pointer;min-height:44px}
+.primary:disabled{opacity:.45;cursor:not-allowed}
+.toolbar{display:flex;gap:10px;margin-bottom:18px}
+.toolbar input,.toolbar select,.panel input,.panel select{background:#11182b;border:1px solid #35415e;color:#fff;border-radius:10px;padding:12px;min-height:44px}
+.toolbar input{flex:1;min-width:0}.toolbar select{width:180px}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.gameCard{background:#151d31;border:1px solid #293550;border-radius:15px;padding:15px;display:flex;flex-direction:column;gap:11px}
+.gameIcon{height:115px;border-radius:11px;background:linear-gradient(135deg,#202b48,#11182b);display:grid;place-items:center;font-size:42px}
+.gameName{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{color:#9da8bf;font-size:.85rem}
+.actions{display:flex;gap:8px}.actions button{flex:1}
+.play{background:#4f7cff;color:#fff;border:0;border-radius:9px;padding:10px;font-weight:700}
+.delete{background:#252d42;color:#fff;border:1px solid #3a4662;border-radius:9px;padding:10px}
+.empty{text-align:center;padding:65px 15px;color:#aab4c8}.emptyIcon{font-size:48px}.empty h2{color:#fff;margin:12px 0 6px}
+.hidden{display:none!important}.view{min-height:300px}.back{background:transparent;border:0;color:#b9c5dc;padding:8px 0;cursor:pointer}
+.panel{max-width:560px;margin:25px auto;background:#151d31;border:1px solid #293550;border-radius:16px;padding:22px}
+.panel h2{margin-bottom:20px}.panel label{display:block;margin:18px 0 0;color:#b9c5dc;font-size:.9rem}
+.panel label input,.panel label select{width:100%;margin-top:7px}
+.fileDrop{border:2px dashed #465471;border-radius:14px;padding:30px 15px;text-align:center;display:flex!important;flex-direction:column;align-items:center;gap:7px;cursor:pointer}
+.fileDrop.drag{border-color:#4f7cff;background:#121e3a}.big{font-size:34px}.fileDrop small{color:#8e9bb4}
+.full{width:100%;margin-top:22px}.status{min-height:22px;color:#9da8bf;margin-top:12px}
+.playerBar{display:flex;align-items:center;gap:18px;margin-bottom:10px}.playerBar strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#game{width:100%;min-height:60vh;background:#000;border-radius:12px;overflow:hidden}
+#game>div{width:100%!important;height:100%!important}
+@media(max-width:600px){.toolbar{flex-direction:column}.toolbar select{width:100%}.games{grid-template-columns:repeat(2,minmax(0,1fr))}.gameCard{padding:10px}.gameIcon{height:90px}.topbar{padding-left:12px;padding-right:12px}main{width:94%}}

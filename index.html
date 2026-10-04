@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GameBox — EmulatorJS Library</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>GameBox</h1>
+    <p>Your browser game library</p>
+  </div>
+  <button id="addBtn" class="primary">＋ Add Game</button>
+</header>
+
+<main>
+  <section id="libraryView">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search games…" aria-label="Search games">
+      <select id="filter" aria-label="Filter games">
+        <option value="all">All systems</option>
+        <option value="nes">NES</option>
+        <option value="snes">SNES</option>
+        <option value="gb">Game Boy</option>
+        <option value="gbc">Game Boy Color</option>
+        <option value="gba">Game Boy Advance</option>
+        <option value="genesis">Genesis</option>
+        <option value="n64">Nintendo 64</option>
+        <option value="psx">PlayStation</option>
+      </select>
+    </div>
+    <div id="games" class="games"></div>
+    <div id="empty" class="empty">
+      <div class="emptyIcon">🎮</div>
+      <h2>No games yet</h2>
+      <p>Add a game file and it will be saved in this browser.</p>
+      <button id="emptyAdd" class="primary">Add your first game</button>
+    </div>
+  </section>
+
+  <section id="addView" class="view hidden">
+    <button class="back" id="backFromAdd">← Library</button>
+    <div class="panel">
+      <h2>Add a game</h2>
+      <label class="fileDrop" id="drop">
+        <input id="file" type="file" hidden>
+        <span class="big">＋</span>
+        <strong id="fileText">Choose a ROM/game file</strong>
+        <small>Tap here or drag a file onto this box</small>
+      </label>
+
+      <label>Game name
+        <input id="name" type="text" placeholder="Game name">
+      </label>
+
+      <label>Emulator core
+        <select id="core">
+          <option value="nes">NES</option>
+          <option value="snes">SNES</option>
+          <option value="gb">Game Boy</option>
+          <option value="gbc">Game Boy Color</option>
+          <option value="gba">Game Boy Advance</option>
+          <option value="genesis">Sega Genesis / Mega Drive</option>
+          <option value="segaGG">Sega Game Gear</option>
+          <option value="n64">Nintendo 64</option>
+          <option value="psx">PlayStation</option>
+          <option value="arcade">Arcade</option>
+        </select>
+      </label>
+
+      <button id="save" class="primary full" disabled>Save Game</button>
+      <p id="addStatus" class="status"></p>
+    </div>
+  </section>
+
+  <section id="playerView" class="view hidden">
+    <div class="playerBar">
+      <button id="backPlayer" class="back">← Library</button>
+      <strong id="playerTitle">Game</strong>
+    </div>
+    <div id="game"></div>
+    <p id="playerStatus" class="status"></p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
